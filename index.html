@@ -1,0 +1,608 @@
+<html lang="de"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caglar Kokina</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .header-section {
+      background-color: #1a3c6e;
+      color: white;
+      padding: 40px 0 30px 0;
+    }
+
+    .header-section h1 {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+
+    .header-section p {
+      color: #a8c4e8;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    .nav-tabs .nav-link {
+      color: #444;
+    }
+
+    .nav-tabs .nav-link.active {
+      font-weight: bold;
+      color: #1a3c6e;
+      border-bottom: 2px solid #1a3c6e;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border: 1px solid #dee2e6;
+    }
+
+    .section-card h5 {
+      color: #1a3c6e;
+      font-weight: bold;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    .job-title {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .job-company {
+      color: #1a3c6e;
+      font-size: 0.9rem;
+    }
+
+    .job-date {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .skill-badge {
+      background-color: #e8eef7;
+      color: #1a3c6e;
+      border: 1px solid #b8cce4;
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      display: inline-block;
+      margin: 3px 2px;
+    }
+
+    .project-card {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 15px;
+      background: white;
+    }
+
+    .project-card h6 {
+      font-weight: bold;
+      color: #1a3c6e;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .badge-soon {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9rem;
+    }
+
+    .lang-row:last-child {
+      border-bottom: none;
+    }
+
+    .lang-level {
+      color: #888;
+      font-size: 0.82rem;
+    }
+
+    footer {
+      background-color: #1a3c6e;
+      color: #a8c4e8;
+      text-align: center;
+      padding: 18px;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    body.dark {
+      background-color: #12151c;
+      color: #e0e6f0;
+    }
+
+    body.dark .section-card,
+    body.dark .project-card {
+      background-color: #1a1e2a;
+      border-color: #2a3040;
+      color: #e0e6f0;
+    }
+
+    body.dark .section-card h5 {
+      color: #7ab4ff;
+      border-bottom-color: #2a3040;
+    }
+
+    body.dark .project-card h6 {
+      color: #7ab4ff;
+    }
+
+    body.dark .project-card p {
+      color: #aab0c0;
+    }
+
+    body.dark .job-company {
+      color: #7ab4ff;
+    }
+
+    body.dark .skill-badge {
+      background-color: #1e2a40;
+      color: #7ab4ff;
+      border-color: #2a3a5a;
+    }
+
+    body.dark .nav-tabs .nav-link {
+      color: #aab0c0;
+    }
+
+    body.dark .nav-tabs .nav-link.active {
+      color: #7ab4ff;
+      background-color: #1a1e2a;
+      border-color: #2a3040 #2a3040 #1a1e2a;
+    }
+
+    body.dark .lang-row {
+      border-bottom-color: #2a3040;
+    }
+
+    .contact-bubble {
+      position: fixed;
+      bottom: 80px;
+      right: 80px;
+
+      background-color: #7ab4ff;
+      border: 1px solid #7ab4ff;
+      color: #12151c;
+
+      padding: 12px 18px;
+      border-radius: 10px;
+
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 17px;
+
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 9999;
+
+      transition: all 0.2s ease;
+    }
+
+    .contact-bubble:hover {
+      color: #7ab4ff;
+      background-color: #1e2433;
+      border-color: #3a4258;
+      transform: translateY(-2px);
+    }
+
+    .contact-menu {
+      display: none;
+
+      position: fixed;
+      bottom: 85px;
+      right: 25px;
+
+      background: #1a1e2a;
+      border: 1px solid #2a3040;
+      border-radius: 12px;
+
+      overflow: hidden;
+      z-index: 10000;
+
+      min-width: 180px;
+    }
+
+    .contact-menu a {
+      display: block;
+      padding: 12px 15px;
+      color: #7ab4ff;
+      text-decoration: none;
+    }
+
+    .contact-menu a:hover {
+      background: #23293a;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header-section">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <h1>Caglar Kokina</h1>
+        <p><i class="bi bi-mortarboard-fill me-1"></i> Angehender IT-Assistent · Fachhochschulreife 2027</p>
+        <p><i class="bi bi-geo-alt-fill me-1"></i> Neuwieder Straße 31, 56566 Neuwied</p>
+        <p><i class="bi bi-envelope-fill me-1"></i> caglarkokina74@gmail.com</p>
+        <p><i class="bi bi-telephone-fill me-1"></i> +49 152 21749050 (Privat)</p>
+        <p><i class="bi bi-telephone-fill me-1"></i> +49 174 1796248 (Whatsapp)</p>
+      </div>
+      <div class="mt-2">
+        <button onclick="toggleDarkMode()" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-sun-fill" id="darkicon"></i> Dark Mode
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <ul class="nav nav-tabs mb-4" id="mainTabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#" onclick="showTab('uebermich', this)">Über mich</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="#" onclick="showTab('erfahrung', this)">Erfahrung</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="showTab('projekte', this)">Projekte</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="showTab('skills', this)">Skills</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="showTab('ausbildung', this)">Ausbildung</a>
+    </li>
+  </ul>
+
+  <div id="uebermich" class="tab-content-section" style="display: block;">
+    <div class="section-card">
+      <h5><i class="bi bi-person-fill me-2"></i>Über mich</h5>
+      <p>
+        IT ist für mich nicht nur ein Schulfach, es ist mit der Zeit zu einem echten Hobby geworden.
+        Angefangen hat es mit den Schulprojekten, die mir von Anfang an viel Spaß gemacht haben.
+        Richtig bestärkt wurde dieses Interesse dann durch mein Praktikum bei IT-Mittelrhein,
+        wo ich zum ersten Mal in einer echten IT-Umgebung arbeiten durfte.
+      </p>
+      <p>
+        Was mich an IT fasziniert? Man merkt, dass alles zusammenhängt und perfekt ineinandergreift.
+        Genau das finde ich spannend. Nach den ersten Aufgaben auf HackTheBox hat mein Interesse
+        an Pentesting und Cybersecurity nochmal einen richtigen Schub bekommen. Deshalb bin ich überzeugt,
+        dass die Ausbildung zum Fachinformatiker für Systemintegration der richtige erste Schritt ist.
+        Sie wird mir die solide Grundlage geben, um mich danach gezielt in Richtung Pentesting weiterentwickeln zu können.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-translate me-2"></i>Sprachen</h5>
+          <div class="lang-row">
+            <span>Deutsch</span>
+            <span class="lang-level">C1 – Fachkundig</span>
+          </div>
+          <div class="lang-row">
+            <span>Türkisch</span>
+            <span class="lang-level">B2 - Muttersprache</span>
+          </div>
+          <div class="lang-row">
+            <span>Englisch</span>
+            <span class="lang-level">B1 – Fortgeschritten</span>
+          </div>
+          <div class="lang-row">
+            <span>Spanisch</span>
+            <span class="lang-level">A1 – Grundkenntnisse</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-heart-fill me-2"></i>Interessen</h5>
+          <p class="mb-1">🔐 Cybersecurity &amp; Pentesting</p>
+          <p class="mb-1">🖥️ PC-Hardware </p>
+          <p class="mb-1">🚗 Fahrzeugtechnik</p>
+          <p class="mb-0">⚽ Sport</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="erfahrung" class="tab-content-section" style="display: none;">
+    <div class="section-card">
+      <h5><i class="bi bi-briefcase-fill me-2"></i>Praktische Erfahrung</h5>
+
+      <div class="mb-4">
+        <div class="job-title">IT-Praktikum <span class="badge-soon">voraussichtlich</span></div>
+        <div class="job-company">Sparkasse Koblenz – IT-Abteilung (6 Wochen)</div>
+        <div class="job-date">08/2026 – 09/2026</div>
+        <ul class="mt-2" style="font-size:0.9rem; color:#555;">
+          <li>IT-Support und Systembetreuung im Bankumfeld </li>
+          <li>Einblick in Netzwerkinfrastruktur und interne IT-Systeme</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div class="mb-4">
+        <div class="job-title">IT-Praktikum</div>
+        <div class="job-company">IT-Mittelrhein (1 Woche)</div>
+        <div class="job-date">05/2026</div>
+        <ul class="mt-2" style="font-size:0.9rem; color:#555;">
+          <li>Linux-Server aufgesetzt und administriert (Ubuntu/Kali)</li>
+          <li>Docker, n8n und Ollama installiert und konfiguriert</li>
+          <li>KI-gestützte E-Mail-Automatisierung entwickelt: automatische Kategorisierung, Speicherung und Push-Benachrichtigung</li>
+          <li>Portfolio-Website entwickelt und deployed</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div>
+        <div class="job-title">Bankkaufmann-Praktikum (2 Wochen)</div>
+        <div class="job-company">Sparkasse Neuwied</div>
+        <div class="job-date">03/2026 – 04/2026</div>
+        <ul class="mt-2" style="font-size:0.9rem; color:#555;">
+          <li>Einblick in digitale Bankprozesse und IT-gestützte Kundenverwaltung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="projekte" class="tab-content-section" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="project-card">
+          <h6> E-Mail-Automatisierung mit KI</h6>
+          <p>Linux-Server aufgesetzt, Ollama, Docker und n8n konfiguriert. KI analysiert eingehende Mails und sortiert sie automatisch (Bewerbung, Rechnung, Spam etc.). Rechnungen werden auf den Servern gespeichert, bei Abmahnungen erhalten Mitarbeiter Push-Benachrichtigungen auf ihre Smartphones.</p>
+          <span class="skill-badge">Linux</span>
+          <span class="skill-badge">Docker</span>
+          <span class="skill-badge">n8n</span>
+          <span class="skill-badge">Ollama</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h6> Arduino </h6>
+          <p> Windrad, Potentiometer, TFT-Display, LED-Stripe und ein Arduino Uno an eine Platine gelötet und programmiert. Potentiometer passt die Drehgeschwindigkeit des Windrads an, TFT zeigt Stromverbrauch bzw. Erzeugung und die Uhrzeit. LED ist von 18-20 Uhr automatisch an. Raspberry Pi gibt die Uhrzeit an.
+            <br>
+            <span class="skill-badge">Raspberry Pi</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">Löten</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h6> Tic-Tac-Toe mit Bot</h6>
+          <p>Bot blockt automatisch den Gegner und setzt auf Sieg. Einzel- und Mehrspieler-Modus, zufällige Startreihenfolge und Spielende (S | N | U).</p>
+          <span class="skill-badge">C++</span>
+          <span class="skill-badge">Qt Creator</span>
+          <span class="skill-badge">GUI</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h6> Praktikumsverwaltung (GUI)</h6>
+          <p>C++ Anwendung zur Verwaltung von Praktika. Berechnet Werktage automatisch (ohne Feiertage/Sonntage), zeigt absolvierte und verbleibende Wochen an. Daten werden gespeichert.</p>
+          <span class="skill-badge">C++</span>
+          <span class="skill-badge">Qt</span>
+          <span class="skill-badge">Datei I/O</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h6>Pentesting – HackTheBox</h6>
+          <p>Auf HackTheBox mit Kali Linux anfängerfreundliche Aufgaben gemacht. Schwerpunkt dabei waren Portscanning und Enumeration. Durch die Informationen vom Scannen konnte ich Schwachstellen finden und die Flags bekommen. </p>
+          <span class="skill-badge">Kali Linux</span>
+          <span class="skill-badge">Nmap</span>
+          <span class="skill-badge">HackTheBox</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h6>Portfolio-Website</h6>
+          <p>Als Schulprojekt gestartet, danach eigenständig weiterentwickelt. Zuerst reines HTML/CSS/JS, dann mit Bootstrap neu aufgebaut. Dark Mode, modernes und cleanes Design.</p>
+          <span class="skill-badge">HTML</span>
+          <span class="skill-badge">CSS</span>
+          <span class="skill-badge">JavaScript</span>
+          <span class="skill-badge">Bootstrap</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="skills" class="tab-content-section" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-hdd-stack-fill me-2"></i>System &amp; Server</h5>
+          <span class="skill-badge">Linux (Ubuntu/Kali)</span>
+          <span class="skill-badge">Server-Administration</span>
+          <span class="skill-badge">Docker</span>
+          <span class="skill-badge">n8n</span>
+          <span class="skill-badge">VirtualBox</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-shield-lock-fill me-2"></i>Security &amp; Netzwerk</h5>
+          <span class="skill-badge">Netzwerktechnik</span>
+          <span class="skill-badge">Nmap</span>
+          <span class="skill-badge">IT-Security Grundlagen</span>
+          <span class="skill-badge">HackTheBox</span>
+          <span class="skill-badge">Enumeration</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-code-slash me-2"></i>Programmierung</h5>
+          <span class="skill-badge">C++</span>
+          <span class="skill-badge">HTML</span>
+          <span class="skill-badge">CSS</span>
+          <span class="skill-badge">JavaScript</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-robot me-2"></i>KI &amp; Automatisierung</h5>
+          <span class="skill-badge">Ollama</span>
+          <span class="skill-badge">Lokale KI-Modelle</span>
+          <span class="skill-badge">n8n Workflows</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-tools me-2"></i>Hardware &amp; Tools</h5>
+          <span class="skill-badge">PC-Hardware</span>
+          <span class="skill-badge">Arduino</span>
+          <span class="skill-badge">Raspberry Pi</span>
+          <span class="skill-badge">Löten</span>
+          <span class="skill-badge">Qt Creator</span>
+          <span class="skill-badge">WebStorm</span>
+          <span class="skill-badge">Bootstrap</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="section-card">
+          <h5><i class="bi bi-person-check-fill me-2"></i>Soft Skills</h5>
+          <span class="skill-badge">Eigeninitiative</span>
+          <span class="skill-badge">Teamfähigkeit</span>
+          <span class="skill-badge">Strukturierte Arbeitsweise</span>
+          <span class="skill-badge">Schnelle Auffassungsgabe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ausbildung" class="tab-content-section" style="display: none;">
+    <div class="section-card">
+      <h5><i class="bi bi-mortarboard-fill me-2"></i>Bildungsweg</h5>
+
+      <div class="mb-4">
+        <div class="job-title">Staatl. gepr. IT-Assistent / Fachhochschulreife</div>
+        <div class="job-company">David-Röntgen Schule · Neuwied</div>
+        <div class="job-date">2025 – heute · voraussichtlicher Abschluss: Sommer 2027</div>
+        <ul class="mt-2" style="font-size:0.9rem; color:#555;">
+          <li>Schwerpunkte: Netzwerke, Programmierung, Betriebssysteme</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div>
+        <div class="job-title">Qualifizierter Sekundarabschluss I</div>
+        <div class="job-company">Karl-Fries Realschule · Bendorf</div>
+        <div class="job-date">2019 – 2025</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Caglar Kokina · Neuwied · caglarkokina74@gmail.com · Geburtsdatum: 11.03.2009
+</footer>
+
+<a href="#" class="contact-bubble" onclick="toggleContactMenu(event)">
+  <i class="bi bi-envelope-fill me-2"></i>
+  Kontakt aufnehmen
+</a>
+
+<div id="contactMenu" class="contact-menu">
+  <a href="mailto:caglarkokina74@gmail.com">
+    <i class="bi bi-envelope-fill"></i> E-Mail
+  </a>
+
+  <a href="https://wa.me/491741796248" target="_blank">
+    <i class="bi bi-whatsapp"></i> WhatsApp
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function showTab(id, el) {
+    document.querySelectorAll('.tab-content-section').forEach(function(s) {
+      s.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+    document.querySelectorAll('#mainTabs .nav-link').forEach(function(a) {
+      a.classList.remove('active');
+    });
+    el.classList.add('active');
+    event.preventDefault();
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    var icon = document.getElementById('darkicon');
+    if (document.body.classList.contains('dark')) {
+      icon.className = 'bi bi-sun-fill';
+    } else {
+      icon.className = 'bi bi-moon-fill';
+    }
+  }
+
+  function toggleContactMenu(event) {
+    event.preventDefault();
+
+    const menu = document.getElementById("contactMenu");
+
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+
+  document.addEventListener("click", function(e) {
+    const menu = document.getElementById("contactMenu");
+    const button = document.querySelector(".contact-bubble");
+
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+</body></html>
