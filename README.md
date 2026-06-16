@@ -6,17 +6,17 @@ Die Website dient dazu, meine Projekte, Fähigkeiten und Erfahrungen im Bereich 
 Sie ergänzt meinen Lebenslauf und bietet detailliertere Informationen zu meinen Kenntnissen und bisherigen Arbeiten.
 
 Verwendet habe ich;
--HTML
--CSS
--JavaScript
--Bootstrap
+HTML
+CSS
+JavaScript
+Bootstrap
 
 Inhalte der Webseite;
--Informationen über mich
--Technische Fähigkeiten
--Eigene Projekte
--Kontaktmöglichkeiten
--Ziele
+Informationen über mich
+Technische Fähigkeiten
+Eigene Projekte
+Kontaktmöglichkeiten
+Ziele
 
 Die Website wurde erstellt, um meine Entwicklung und meine Begeisterung für IT darzustellen.
 
