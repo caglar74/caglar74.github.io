@@ -18,7 +18,6 @@ Eigene Projekte
 Kontaktmöglichkeiten
 Ziele
 
-Die Website wurde erstellt, um meine Entwicklung und meine Begeisterung für IT darzustellen.
 
 Website:
 
